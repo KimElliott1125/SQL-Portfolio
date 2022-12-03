@@ -1,0 +1,33 @@
+CREATE TABLE puppies (ID INTEGER PRIMARY KEY, Breed TEXT, Color TEXT, Kennel INTEGER, Price INTEGER);
+
+INSERT INTO puppies VALUES
+(1, "Great Dane", "Black",1,1500),
+(2, "Great Dane", "Brindle",2,2000),
+(3, "Great Dane", "Blue",3,3500),
+(4, "Great Dane", "Mantle",4,1500),
+(5, "Great Dane", "Harlequinn",5,2500),
+(6, "Malinois", "Brown",6,1750),
+(7, "Poodle", "Black",7,1000),
+(8, "Poodle", "White",8,1000),
+(9, "Rhodesian Ridgeback", "Brown",9,800),
+(10, "Lab", "Black",10,1250),
+(11, "Lab", "Silver",11,1800),
+(12, "Lab", "Yellow",12,1250),
+(13, "Pudel Pointer", "Red",13,15000),
+(14, "West Highland Terrier", "White",14,500),
+(15, "Xolo", "Black",15,1300)
+;
+
+--display the database by price
+SELECT * FROM puppies
+ORDER BY price desc;
+
+--what is the avg price of Great Danes
+SELECT avg(price) "average great dane" FROM puppies
+Where breed="Great Dane";
+
+--what are the most 5 expensive? 
+SELECT breed, color, price
+FROM puppies
+order by price desc
+limit 5; 
