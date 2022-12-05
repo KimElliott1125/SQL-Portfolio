@@ -1,0 +1,17 @@
+CREATE TABLE movie_stars (id INTEGER PRIMARY KEY, fullname TEXT, movie TEXT);
+INSERT INTO movie_stars (fullname, movie) VALUES ("Daniel Craig", "Casino Royale");
+INSERT INTO movie_stars (fullname, movie) VALUES ("Matthew Broderick", "Ferris Bueller");
+INSERT INTO movie_stars (fullname, movie) VALUES ("Ben Affleck", "Good Will Hunting");
+INSERT INTO movie_stars (fullname, movie) VALUES ("Michael Douglas", "Romancing the Stone");
+INSERT INTO movie_stars (fullname, movie) VALUES ("Harrison Ford", "Raiders of the Lost Ark");
+
+CREATE TABLE spouses (id INTEGER PRIMARY KEY, fullname TEXT, spouse_id INTEGER);
+INSERT INTO spouses (fullname, spouse_id) VALUES ("Catherine Zeta-Jones", 4);
+INSERT INTO spouses (fullname, spouse_id) VALUES ("Sarah Jessica Parker", 2);
+INSERT INTO spouses (fullname, spouse_id) VALUES ("J-Lo", 3);
+INSERT INTO spouses (fullname, spouse_id) VALUES ("Catherine Zeta-Jones", 5);
+INSERT INTO spouses (fullname, spouse_id) VALUES ("Calista FLockhart", 6);
+
+Select movie_stars.movie, spouses.fullname as spouse FROM movie_stars
+LEFT OUTER JOIN spouses
+ON movie_stars.id=spouses.spouse_id;
